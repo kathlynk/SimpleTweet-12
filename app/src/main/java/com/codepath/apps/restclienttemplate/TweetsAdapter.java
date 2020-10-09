@@ -73,6 +73,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         TextView tvBody;
         TextView tvScreenName;
         TextView tvTimestamp;
+        TextView tvHandle;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -80,11 +81,13 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
             tvTimestamp = itemView.findViewById(R.id.tvTimestamp);
+            tvHandle = itemView.findViewById(R.id.tvHandle);
         }
 
         public void bind(Tweet tweet) {
             tvBody.setText(tweet.body);
-            tvScreenName.setText(tweet.user.screenName);
+            tvScreenName.setText(tweet.user.name);
+            tvHandle.setText("@" + tweet.user.screenName);
             tvTimestamp.setText(getRelativeTimeAgo(tweet.createdAt));
             Glide.with(context).load(tweet.user.profileImageUrl).fitCenter().transform(new RoundedCornersTransformation(15, 5)).into(ivProfileImage);
         }
@@ -109,11 +112,11 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                 } else if (diff < 2 * MINUTE_MILLIS) {
                     return "a minute ago";
                 } else if (diff < 50 * MINUTE_MILLIS) {
-                    return diff / MINUTE_MILLIS + " m";
+                    return diff / MINUTE_MILLIS + "m";
                 } else if (diff < 90 * MINUTE_MILLIS) {
                     return "an hour ago";
                 } else if (diff < 24 * HOUR_MILLIS) {
-                    return diff / HOUR_MILLIS + " h";
+                    return diff / HOUR_MILLIS + "h";
                 } else if (diff < 48 * HOUR_MILLIS) {
                     return "yesterday";
                 } else {

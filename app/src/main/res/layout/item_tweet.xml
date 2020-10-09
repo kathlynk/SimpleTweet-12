@@ -24,7 +24,9 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@id/ivProfileImage"
-        android:text="melindll" />
+        android:text="melindll"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvBody"
@@ -35,9 +37,10 @@
         android:layout_marginTop="2dp"
         android:layout_marginRight="10dp"
         android:layout_toEndOf="@+id/ivProfileImage"
-        android:text="This is my tweet!"
         android:autoLink="all"
-        android:linksClickable="true"/>
+        android:linksClickable="true"
+        android:text="This is my tweet!"
+        android:textColor="#2E2A2A" />
 
     <TextView
         android:id="@+id/tvTimestamp"
@@ -49,4 +52,14 @@
         android:layout_marginEnd="13dp"
         android:text="36s"
         android:textAlignment="textEnd" />
+
+    <TextView
+        android:id="@+id/tvHandle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/tvScreenName"
+        android:text="mel" />
 </RelativeLayout>
