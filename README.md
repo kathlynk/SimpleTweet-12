@@ -46,7 +46,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
-
+I had trouble working with the database, but I was able to re-watch the videos to help fix the database.
 
 ## Part 1
 
